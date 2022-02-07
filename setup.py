@@ -3,20 +3,25 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+with open("requirements.txt", "r") as fh:
+    required = fh.read()
+
 requirements = ["requests<=2.21.0"]
 
 setuptools.setup(
-    name="hello_world_ericjaychi",
-    version="0.0.1",
-    author="Eric Chi",
-    author_email="ericjaychi@gmail.com",
-    description="A Hello World package",
+    name="pyWApp",
+    version="0.0.2",
+    author="Dark White",
+    author_email="sasha.2000ibr@gmail.com",
+    description="pyWApp is a selenium-based Whatsapp wrapper",
     long_description=long_description,
+    install_requires=required,
+
     long_description_content_type="text/markdown",
-    url="https://github.com/ericjaychi/sample-pypi-package",
+    url="https://github.com/pysashapy/pyWApp",
     packages=setuptools.find_packages(),
     classifiers=[
-        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.10",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
