@@ -76,7 +76,7 @@ print(names_all_chats)
 client.close()
 ```
 
-For more Examples and Functions, have a look at the [Example]((https://pypi.org/project/pyWAppSel/exemples)).
+For more Examples and Functions, have a look at the [Example]((https://pypi.org/project/pyWAppSel/examples)).
 
 ## Contributing
 
