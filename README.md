@@ -1,5 +1,6 @@
 # pyWAppSel
 [![image](https://flat.badgen.net/badge/release/1.0.4/blue)](https://github.com/pysashapy/pyWAppSel)
+[![image](https://flat.badgen.net/badge/python/3.10/orange)](https://www.python.org/downloads/release/python-3102/)
 
 [pyWAppSel](https://pypi.org/project/pyWAppSel/) is a Python library with various helpful features.
 It's easy-to-use and does not require you to do any additional setup.
