@@ -2,11 +2,11 @@
 [![image](https://flat.badgen.net/badge/release/1.0.4/blue)](https://github.com/pysashapy/pyWAppSel)
 [![image](https://flat.badgen.net/badge/python/3.10/orange)](https://www.python.org/downloads/release/python-3102/)
 
-# Whatsapp
-Package [pysashapy/pyWAppSel](https://github.com/pysashapy/pyWAppSel) implements the WhatsApp Web API to provide a clean interface for developers. The official WhatsApp Business API was released in August 2018. You can check it out [here](https://www.whatsapp.com/business/api).
-
 [pyWAppSel](https://pypi.org/project/pyWAppSel/) is a Python library with various helpful features.
 It's easy-to-use and does not require you to do any additional setup.
+
+# Whatsapp
+Package [pysashapy/pyWAppSel](https://github.com/pysashapy/pyWAppSel) implements the WhatsApp Web API to provide a clean interface for developers. The official WhatsApp Business API was released in August 2018. You can check it out [here](https://www.whatsapp.com/business/api).
 
 ## Installation and Supported Versions
 
