@@ -76,7 +76,7 @@ print(names_all_chats)
 client.close()
 ```
 
-For more Examples and Functions, have a look at the [Example]((https://pypi.org/project/pyWAppSel/examples)).
+For more Examples and Functions, have a look at the [Example](https://github.com/pysashapy/pyWAppSel/examples).
 
 ## Contributing
 
@@ -85,6 +85,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 Apache Software License (Apache 2.0).
-For more information see [this](https://pypi.org/project/pyWAppSel/LICENSE)
+For more information see [this](https://github.com/pysashapy/pyWAppSel/LICENSE)
 
-NOTICE [this](https://pypi.org/project/pyWAppSel/NOTICE)
+NOTICE [this](https://github.com/pysashapy/pyWAppSel/NOTICE)
