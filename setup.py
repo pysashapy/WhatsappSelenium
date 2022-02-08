@@ -7,10 +7,10 @@ requirements = ["requests<=2.21.0"]
 
 setuptools.setup(
     name="pyWAppSel",
-    version="1.0.3",
+    version="1.0.4",
     author="Dark White",
     author_email="sasha.2000ibr@gmail.com",
-    description="pyWApp is a selenium-based Whatsapp wrapper",
+    description="pyWAppSel is a selenium-based Whatsapp wrapper",
     long_description=long_description,
     install_requires=[
         'selenium',
@@ -21,7 +21,7 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3.10",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License (Apache 2.0)",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',

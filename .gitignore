@@ -19,6 +19,7 @@ lib64/
 parts/
 sdist/
 var/
+.idea/
 wheels/
 pip-wheel-metadata/
 share/python-wheels/
@@ -26,7 +27,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
+shelf/
+workspace.xml
 # PyInstaller
 #  Usually these files are written by a python script from a template
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
