@@ -40,7 +40,7 @@ from pyWAppSel.types import FileTypes
 from pyWAppSel.Client import WhatsApp, Messenger
 
 # start selenium and auth
-client = WhatsApp(path_download='download')
+client = WhatsApp(path_download='full path to downloaded files')
 
 # auth
 if not client.isLogin(wait_time=100):

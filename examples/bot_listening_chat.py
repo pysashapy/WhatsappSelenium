@@ -2,7 +2,7 @@ from pyWAppSel.Client import WhatsApp, Messenger, LongPoll
 from pyWAppSel.types import EventTypes, MessageTypes
 
 # start selenium and auth
-client = WhatsApp(path_download='download')
+client = WhatsApp(path_download='full path to downloaded files')
 
 # auth
 if not client.isLogin(wait_time=100):
