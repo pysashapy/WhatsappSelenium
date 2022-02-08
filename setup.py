@@ -19,9 +19,9 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/pysashapy/pyWApp",
     packages=setuptools.find_packages(),
+    license="Apache License 2.0",
     classifiers=[
         "Programming Language :: Python :: 3.10",
-        "License :: OSI Approved :: Apache Software License (Apache 2.0)",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
