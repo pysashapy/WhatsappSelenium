@@ -26,10 +26,7 @@ for element, type_ in longpoll.listen(delay=0.1, wait=100):
             if element.text == "/start":
                 chat.sendText(text=f'Hello, {element.user_name}!')
         elif element.type not in (MessageTypes.TEXT, MessageTypes.UNKNOWN):
-            element.download()
-            if not element.isDownloaded():
-                """
-                    downloaded video/photo/sticker/voice message, located on the 'path_download' path
-                """
+            path_file = element.download(auto_rename=True, wait=5)
+            print(path_file)
 # close WebDriver
 client.close()
