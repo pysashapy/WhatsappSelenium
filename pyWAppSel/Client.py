@@ -1,10 +1,12 @@
 import os
+import glob
 import time
+
 
 from selenium.webdriver import Keys
 from selenium.webdriver.remote.webelement import WebElement
 
-from . import getQrUrl, printQrUrl, elements
+from . import getQrUrl, printQrUrl, elements, generationToken
 from .browser import Browser
 from .types import selectors_types, MessageTypes, EventTypes
 
@@ -124,6 +126,7 @@ class Chat:
 
 class Message:
     data = None
+    path = ''
 
     def __init__(self, element: WebElement, chat: Chat):
         self.chat_window = chat
@@ -157,14 +160,46 @@ class Message:
         if name:
             self.user_name = name[0]
 
-    def download(self):
+    def download(self, auto_rename=False, wait=1):
         self.element.find_element(*elements.CHAT_MENU).click()
         self.element.find_element(*elements.CHAT_MENU_SELECTED_MESSAGES).click()
         self.element.click()
         self.element.find_element(*elements.CHAT_BOTTOM_MENU_MESSAGES_DOWNLOAD).click()
 
+        if self.waitDownload(wait):
+            self.setPath(self.findFile())
+            if auto_rename:
+                return self.renameFile(generationToken(16))
+            return self.getPath()
+        return ''
+
     def isDownloaded(self):
         return bool(self.chat_window.browser.find_elements(*elements.WAIT_DOWNLOAD))
+
+    def waitDownload(self, wait):
+        last_time = time.time()
+        while time.time()-last_time < wait:
+            if not self.isDownloaded():
+                return True
+        return False
+
+    def findFile(self):
+        list_of_files = glob.glob(self.chat_window.client.path_download)
+        latest_file = max(list_of_files, key=os.path.getctime)
+        return latest_file
+
+    def renameFile(self, name):
+        type_file = self.getPath().split('.')[-1]
+        new_path = f"{self.chat_window.client.path_download}{name}.{type_file}"
+        os.rename(new_path, self.getPath())
+        self.setPath(new_path)
+        return self.path
+
+    def setPath(self, path):
+        self.path = path
+
+    def getPath(self):
+        return self.path
 
 
 class LongPoll:

@@ -1,3 +1,5 @@
+import random
+import string
 import urllib
 
 
@@ -53,3 +55,42 @@ def getQrUrl(data: str, size=300) -> str:
 
 def printQrUrl(url: str, time_out_second: int = 20):
     print(f"{Colors.CGREENBG}[Log in]{Colors.CEND} qr: {url}, time out: {time_out_second} second")
+
+
+def generationToken(len_):
+    letters_and_digits = string.ascii_letters + string.digits
+    rand_string = ''.join(random.sample(letters_and_digits, len_))
+    return rand_string
+
+
+def findCommand(line: str, start_command='', is_command=True, kwarg_sep="/", *args, **kwargs):
+    """
+    !!!! IN PROGRESS!!!!
+
+    """
+    commands_line = line.split()
+    data = {"isFind": False, "kwargs": {}, "args": []}
+
+    if commands_line[0] == start_command or not is_command:
+        data["isFind"] = True
+
+    kwargs_keys = list(kwargs.keys())
+    last_is_kwarg = ''
+    for arg in range(len(commands_line)):
+        arg = commands_line[arg]
+        if arg[0] == kwarg_sep:
+            for kwarg_ in range(len(kwargs_keys)):
+                key = kwargs_keys[kwarg_]
+                if key == arg[1:]:
+                    data["kwargs"][key] = kwargs[key](arg[1:])
+                    del kwargs_keys[kwarg_]
+                    break
+        else:
+            for arg in range(len(args)):
+                key = args[arg]
+                if key == arg[0]:
+                    data["kwargs"][key] = kwargs[key](arg[1:])
+                    del kwargs_keys[kwarg_]
+                    break
+
+    return data
